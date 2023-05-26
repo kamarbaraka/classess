@@ -32,15 +32,9 @@ public class Manager
      * @return double salary bonus included*/
     @Override
     public double getSalary(){
-        return super.getSalary() + bonus;
+        return super.getSalary();
     }
     //unit test
     public static void main(String[] args){
-        Employee baraka = new Employee("baraka", 4500, LocalDate.of(1999,8,22));
-        Manager boss = new Manager("boss", 50000, LocalDate.now());
-        boss.setBonus(250000);
-        for (Object each : boss.info())
-            System.out.println(each);
-
     }
 }
