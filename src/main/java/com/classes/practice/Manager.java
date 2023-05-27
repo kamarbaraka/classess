@@ -1,5 +1,7 @@
-import com.kamarbaraka.practice.Employee;
+package com.classes.practice;
+
 import java.time.LocalDate;
+import com.mains.Employee;
 
 /**
  * this program demonstrates inheritance among classes\
@@ -8,7 +10,7 @@ import java.time.LocalDate;
  * @since 25/5/2023*/
 
 public class Manager
-    extends com.kamarbaraka.practice.Employee {
+    extends Employee {
     private double bonus;
     /**
      *manager canonical constructor constructs a manager object
@@ -36,5 +38,9 @@ public class Manager
     }
     //unit test
     public static void main(String[] args){
+        Manager[] managers = new Manager[10];
+        managers[0] = new Manager("baraka", 2000, LocalDate.now());
+        //employees[0] = new Employee("kamar", 1000, LocalDate.now());
+        System.out.println(managers[0]);
     }
 }

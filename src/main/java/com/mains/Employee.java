@@ -1,4 +1,4 @@
-package com.kamarbaraka.practice;
+package com.mains;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -21,8 +21,8 @@ public class Employee {
     private static int nextId;
     private static final Random random = new Random();
     private final int id;
-    private String name;
-    private double salary;
+    public String name;
+    public double salary;
     private LocalDate hireDay;
 
     //static initialization block
@@ -136,5 +136,6 @@ public class Employee {
 
     //unit test
     public static void main(String[] args) {
+        System.out.println("hello");
     }
 }
