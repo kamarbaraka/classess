@@ -21,8 +21,8 @@ public class Employee {
     private static int nextId;
     private static final Random random = new Random();
     private final int id;
-    public String name;
-    public double salary;
+    protected String name;
+    protected double salary;
     private LocalDate hireDay;
 
     //static initialization block
@@ -62,6 +62,10 @@ public class Employee {
      */
     public Employee(String name) {
         this(name, LocalDate.now());
+    }
+
+    public Employee(String name, double salary){
+        this(name, salary, LocalDate.now());
     }
 
     public Employee() {
