@@ -129,13 +129,28 @@ public class Employee {
      */
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Employee{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", salary=").append(salary);
-        sb.append(", hireDay=").append(hireDay);
-        sb.append('}');
-        return sb.toString();
+        return "%s[ id= %s, name= %s, salary= %,.2f, hireDay= %s ]".formatted(
+                getClass().getSimpleName(), this.getId(), this.getName(), this.getSalary(), this.getHireDay()
+        );
+    }
+    /**
+     * compares this object to another
+     * @param otherObject the object to compare with
+     * @return true if they are equal else false*/
+    @Override
+    public boolean equals(Object otherObject){
+        if (otherObject == null) return false;
+        if (this == otherObject) return true;
+        if (!(otherObject instanceof Employee other)) return false;
+
+        return this.id == other.getId() && this.name.equals(other.getName()) && this.salary == other.getSalary()
+                && this.hireDay.equals(other.getHireDay());
+    }
+    /**
+     * @return the computed hashcode of the object*/
+    @Override
+    public int hashCode(){
+        return Objects.hash(this.name, this.id, this.salary, this.hireDay);
     }
 
     //unit test

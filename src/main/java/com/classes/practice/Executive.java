@@ -1,10 +1,10 @@
 package com.classes.practice;
 
 import com.mains.Employee;
-
-import java.sql.SQLSyntaxErrorException;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  * an implementation of the executive class which extends the Employee class
@@ -87,6 +87,16 @@ public final class Executive
     public int hashCode(){
         return Objects.hash(title, bonus);
     }
+    /**
+     * provides a string representation of this object
+     * @return string representation of Executive*/
+    @Override
+    public String toString(){
+        return "%s[ id= %s, title= %s, name= %s, salary=%,.2f, hireDay= %s, bonus= %s ]\n".formatted(
+                getClass().getSimpleName(), this.getId(), this.getTitle(), this.getName(), this.getSalary(),
+                this.getHireDay(), this.getBonus()
+        );
+    }
     //unit test
     /**
      * @param args array args from console*/
@@ -99,6 +109,11 @@ public final class Executive
         var baraka = new Employee("baraka", 25000, LocalDate.now());
         var you = new Executive("CEO", "kamar", 256000);
         you.setBonus(500);
+        Object[] ar = new Object[]{"kamar", 23};
+        var val = Objects.hash(ar[0], ar[1]) == Arrays.hashCode(ar);
+
+        System.out.println(Arrays.toString(new Object[] {1, 2, "kamar"}));
+        Logger.getGlobal().info("hey" + boss);
 
         Executive me = null;
 
