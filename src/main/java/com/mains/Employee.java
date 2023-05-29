@@ -15,7 +15,7 @@ import java.util.Random;
  * string representation of the object
  * @see Staff
  * @author kamar baraka
- * @version 2.0
+ * @version 2.1
  */
 public class Employee {
     private static int nextId;
@@ -144,7 +144,7 @@ public class Employee {
         if (!(otherObject instanceof Employee other)) return false;
 
         return this.id == other.getId() && this.name.equals(other.getName()) && this.salary == other.getSalary()
-                && this.hireDay.equals(other.getHireDay());
+                && Objects.equals(this.hireDay, other.hireDay);
     }
     /**
      * @return the computed hashcode of the object*/

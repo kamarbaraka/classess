@@ -12,7 +12,7 @@ import java.util.*;
  * the staff object has methods {@code  add()}, {@code get()} and {@code  getStaff()}.
  * the add method takes an employee object as argument and adds it to itself.
  * @author kamar baraka
- * @version 1.0
+ * @version 1.1
  * @since 21/05/2023 17:00
  * */
 
@@ -95,7 +95,7 @@ public class Staff {
         if (otherObject == null) return false;
         if (!(otherObject instanceof Staff other)) return false;
 
-        return office.equals(other.getOffice()) && getMembers().equals(other.getMembers());
+        return office.equals(other.getOffice()) && Objects.equals(this.members, other.members);
     }
     /**
      * computes the hashCode of this object

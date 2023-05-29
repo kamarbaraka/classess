@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 /**
  * an implementation of the executive class which extends the Employee class
  * @author kamar baraka
- * @version 1.0
+ * @version 1.1
  * @since 27/05/2023*/
 
 public final class Executive
